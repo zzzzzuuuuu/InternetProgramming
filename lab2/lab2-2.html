@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab2-2(60201953 안지유)</title>
+    <script>
+        function add(a, b) { // 더하는 함수
+          return a + b;
+        }
+
+        function multiply(a, b) { // 곱하는 함수
+          return a * b;
+        }
+
+        function sayAnswer(result) { // 콜백함수
+          alert(result);
+        }
+
+        function calculate(a, b, callbackFunction) { // 콜백함수 호출
+          const answer1 = add(a, b);
+          const answer2 = multiply(a, b);
+          callbackFunction(`더한 값: ${answer1}, 곱한 값: ${answer2}`);
+        }
+
+        const n1 = parseInt(prompt('첫 번째 값: '));
+        const n2 = parseInt(prompt('두 번째 값: '));
+
+        calculate(n1, n2, sayAnswer);
+    </script>
+</head>
+</html>
