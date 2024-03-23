@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab2-1(60201953 안지유)</title>
+    <script>
+        function add() {
+          var sum = 0;
+          var n = 1;
+
+          while (n <= 1000) {
+            if (n % 7 !== 0) {
+              n++;
+              continue;
+            }
+            sum += n;
+            n++;
+          }
+          return sum;
+        }
+        alert(add())
+    </script>
+</head>
+</html>
