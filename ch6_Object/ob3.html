@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>obj</title>
+    <script>
+        var person = {
+          name: "홍길동",
+          korean: 50,
+          math: 40,
+          english: 80,
+          science: 70,
+          printScore: function (){
+            alert(`${this.name}의 점수합은 ${this.korean + this.math + this.english + this.science}입니다.`)
+          }
+        }
+        person.printScore()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
