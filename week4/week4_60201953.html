@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>60201953 안지유</title>
+    <script>
+        function makeSquare(leftX = 10, leftY = 10, rightX = 100, rightY = 100) {
+          var willReturn = {
+            leftX: leftX,
+            leftY: leftY,
+            rightX: rightX,
+            rightY: rightY,
+
+            getWidth: function () {
+            return this.rightX - this.leftX;
+            },
+            getHeight: function () {
+              return this.rightY - this.leftY;
+            },
+            getArea: function () {
+              return this.getWidth() * this.getHeight();
+            },
+            getPerimeter: function () {
+              return (this.getWidth() + this.getHeight()) * 2;
+            },
+            toString: function () {
+              return `사각형의 넓이: ${this.getArea()}, 사각형의 둘레: ${this.getPerimeter()}`
+            }
+          };
+          return willReturn;
+        }
+        var values = [];
+        for (var i=0; i<4; i++) {
+          var input = prompt('네 개의 값을 하나씩 입력하세요: ');
+          values.push(Number(input) || undefined);
+        }
+        alert(makeSquare(...values).toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
