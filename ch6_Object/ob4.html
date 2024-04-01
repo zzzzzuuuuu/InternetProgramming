@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>obj</title>
+    <script>
+        var student = {
+          name: "홍길동",
+          korean: 50,
+          math: 40,
+          english: 80,
+          science: 70,
+          toString: function () {
+            var sum = parseInt(this.korean) + parseInt(this.math) + parseInt(this.english) + parseInt(this.science);
+            var out = this.name + "의 성적의 합은 " + sum
+            return out;
+          }
+        }
+        alert(student);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
