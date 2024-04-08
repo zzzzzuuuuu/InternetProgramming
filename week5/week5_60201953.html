@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>캡슐화 과제</title>
+    <script>
+      // 60201953 안지유 인터넷프로그래밍 5주차 과제
+      function MakeSquare(leftX, leftY, rightX, rightY) {
+        var leftX = leftX || 10;
+        var leftY = leftY || 10;
+        var rightX = rightX || 100;
+        var rightY = rightY || 100;
+
+        this.getLeftX = function () {
+          return leftX;
+        };
+        this.getLeftY = function () {
+          return leftY;
+        };
+        this.getRightX = function () {
+          return rightX;
+        };
+        this.getRightY = function () {
+          return rightY;
+        };
+
+        this.setLeftX = function (x) {
+          leftX = x;
+        };
+        this.setLeftY = function (y) {
+          leftY = y;
+        };
+        this.setRightX = function (x) {
+          rightX = x;
+        };
+        this.setRightY = function (y) {
+          rightY = y;
+        };
+      }
+      MakeSquare.prototype.getCircumstance = function () {
+        return (this.getRightX() - this.getLeftX() + this.getRightY() - this.getLeftY())*2;
+      };
+      MakeSquare.prototype.getArea = function () {
+        return (this.getRightX() - this.getLeftX()) * (this.getRightY() - this.getLeftY());
+      };
+      var makeSquare = new MakeSquare(5, 15, 10, 20);
+      makeSquare.setLeftX(100);
+      makeSquare.setLeftY(200);
+      makeSquare.setRightX(150);
+      makeSquare.setRightY(250);
+      alert('둘레: ' + makeSquare.getCircumstance() + ', 넓이: ' + makeSquare.getArea());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
