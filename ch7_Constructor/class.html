@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클래스 예제</title>
+</head>
+<body>
+<script>
+  class Rectangle {
+    constructor(width, height) {
+      this._width = width;
+      this._height = height;
+    }
+
+    // width의 getter, setter
+    get width() {
+      return this._width;
+    }
+
+    set width(input) {
+      this._width = input;
+    }
+
+    // height의 getter, setter
+    get height() {
+      return this._height;
+    }
+
+    set height(input) {
+      this._height = input;
+    }
+
+    getArea() {
+      return this._width * this._height;
+    }
+  }
+
+  const rectangle = new Rectangle(100, 200);
+  rectangle.width = 200; // setter
+  alert(rectangle.getArea());
+</script>
+</body>
+</html>

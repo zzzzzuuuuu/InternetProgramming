@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 예제</title>
+</head>
+<body>
+<script>
+  function makeSquare(minX, minY, maxX, maxY) {
+    // 객체 생성
+    var willReturn = {
+      // 속성
+      leftX: minX || 10,
+      leftY: minY || 10,
+      rightX: maxX || 100,
+      rightY: maxY || 100,
+
+      // 메서드
+      getCircumstance: function () {
+        return (this.rightX - this.leftX + this.rightY - this.leftY) * 2;
+      },
+      getArea: function () {
+        return (this.rightX - this.leftX) * (this.rightY - this.leftY);
+      },
+      toString: function () { // 해당 객체를 문자열로 표현
+        return "둘레: " + this.getCircumstance() + ", 넓이: " + this.getArea();
+      }
+    };
+    return willReturn;
+  }
+
+  var square = [];
+  square.push(makeSquare(100, 200, 150, 250));
+  square.push(makeSquare(10, 20, 15, 25));
+
+  var output = "";
+  for (var i in square) {
+    output += square[i].toString() + "\n";
+  }
+  alert(output);
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>캡슐화 예제</title>
+</head>
+<body>
+<script>
+  // 생성자 함수 선언, 화살표함수 불가능 -> 화살표함수는 this 바인딩을 생성하지 않는다!!!
+  function Rectangle(w, h) {
+    // 변수 선언
+    var width = w;
+    var height = h;
+    // 메서드 선언
+    this.getWidth = () => {
+      return width;
+    };
+    this.getHeight = () => {
+      return height;
+    };
+    this.setWidth = (w) => {
+      if (w < 0) {
+        throw "길이는 음수일 수 없습니다.";
+      } else {
+        width = w;
+      }
+    };
+    this.setHeight = (h) => {
+      if (w < 0) {
+        throw "길이는 음수일 수 없습니다.";
+      } else {
+        height = h;
+      }
+    };
+  }
+
+  // 프로토타입 지정, 함수 밖이므로 prototype을 써야함 / 화살표함수 사용 불가능
+  Rectangle.prototype.getArea = function () {
+    return this.getWidth() * this.getHeight();
+  };
+
+  // 변수 선언
+  var rectangle = new Rectangle(5, 7);
+  // rectangle.setWidth(-2);
+  rectangle.setHeight(3);
+  // 출력
+  alert("넓이: " + rectangle.getArea())
+</script>
+</body>
+</html>
