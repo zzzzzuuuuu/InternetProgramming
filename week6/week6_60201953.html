@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>60201953 안지유</title>
+    <script>
+      // 상속 받은 자식들만 private
+      class Person {
+        constructor(name) {
+          this._name = name;
+        }
+
+        get name() {
+          return this._name;
+        }
+
+        set name(n) {
+          return this._name = n;
+        }
+      }
+
+      class Employee extends Person {
+        #title;
+
+        constructor(name, title) {
+          super(name);
+          this.#title = title;
+        }
+
+        get title() {
+          return this.#title;
+        }
+
+        set title(t) {
+          this.#title = t;
+        }
+
+        toString = function () {
+          return `${this.name}: ${this.title}`;
+        }
+      }
+
+      var e1 = new Employee("Scott", "Developer");
+      var e2 = new Employee("Mary", "Engineering");
+
+      alert(e1.toString() + "\n" + e2.toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
