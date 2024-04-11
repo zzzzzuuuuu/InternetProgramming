@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class-private 실습</title>
+</head>
+<body>
+<script>
+  class Rectangle {
+    // private, 생성자 함수 위에 추가
+    #width;
+    #height;
+
+    constructor(width, height) {
+      this.#width = width;
+      this.#height = height;
+    }
+
+    // width의 getter, setter
+    get width() {
+      return this.#width;
+    }
+
+    set width(input) {
+      this.#width = input;
+    }
+
+    // height의 getter, setter
+    get height() {
+      return this.#height;
+    }
+
+    set height(input) {
+      this.#height = input;
+    }
+
+    getArea() {
+      return this.width * this.height;
+    }
+  }
+
+  const rectangle = new Rectangle(10, 20);
+  rectangle.w = -10;
+  // rectangle.width = -10; // setter를 호출, 근데 왜 위에거랑 출력이 다르니?
+  alert(rectangle.getArea());
+</script>
+</body>
+</html>
