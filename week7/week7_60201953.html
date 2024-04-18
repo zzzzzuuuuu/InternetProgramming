@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>60201953 안지유</title>
+    <script>
+      function makeSquare(leftX = 10, leftY = 10, rightX = 100, rightY = 100) {
+        var willReturn = {
+          leftX: leftX,
+          leftY: leftY,
+          rightX: rightX,
+          rightY: rightY,
+
+          getWidth: function () {
+            return this.rightX - this.leftX;
+          },
+          getHeight: function () {
+            return this.rightY - this.leftY;
+          },
+          getArea: function () {
+            return this.getWidth() * this.getHeight();
+          },
+          getPerimeter: function () {
+            return (this.getWidth() + this.getHeight()) * 2;
+          },
+          toString: function () {
+            return `사각형의 넓이: ${this.getArea()}, 사각형의 둘레: ${this.getPerimeter()}`
+          }
+        };
+        return willReturn;
+      }
+
+      var values = [];
+      values.push((new makeSquare(100, 200, 150, 250)).getArea());
+      values.push((new makeSquare(10, 20, 15, 25)).getArea());
+      values.push((new makeSquare(200, 300, 450, 550)).getArea());
+      values.push((new makeSquare(50, 60, 70, 80)).getArea());
+
+      console.log("넓이 정렬하기");
+      console.log(values);
+      console.log("넓이 내림차순 정렬하기");
+      console.log(values.sort((a, b) => {
+        return b - a;
+      }));
+      console.log("넓이가 100 이하인 값 빼고 정렬하기");
+      console.log(values.filter((area) => {
+        return area > 100;
+      }));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
