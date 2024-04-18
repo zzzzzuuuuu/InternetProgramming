@@ -20,28 +20,31 @@
       }
 
       class Employee extends Person {
-        #title;
+        #_title;
 
         constructor(name, title) {
           super(name);
-          this.#title = title;
+          this.#_title = title;
         }
 
         get title() {
-          return this.#title;
+          return this.#_title;
         }
 
         set title(t) {
-          this.#title = t;
+          this.#_title = t;
         }
 
         toString = function () {
-          return `${this.name}: ${this.title}`;
+          return `${this.name}: ${this.title}`; // getter 통해서 가져오므로 # 안 붙임
         }
       }
 
       var e1 = new Employee("Scott", "Developer");
       var e2 = new Employee("Mary", "Engineering");
+      e2.name = "Man"; // setter 값 부름
+      e2._title = "Manager"; // private이므로 접근 불가능, 값 재할당 안 됨
+      console.log(e2.name, e2.title);
 
       alert(e1.toString() + "\n" + e2.toString());
     </script>
