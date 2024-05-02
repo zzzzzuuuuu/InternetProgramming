@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script>
+      // h1->Hello World, h2->빨간색 변경, h2->마지막만 Hello JQuery, 글씨 변경
+      window.onload = function () {
+        var headers = document.getElementsByTagName('h1');
+        var tags = document.getElementsByTagName('h2');
+        var second = document.getElementById("second");
+        var third = document.getElementById("third");
+
+        second.style.color = "red";
+        // second.setAttribute()
+        third.style.fontFamily = "Arial";
+        headers[0].innerHTML = 'Hello World';
+        tags[0].innerHTML = 'World';
+        tags[1].innerHTML = 'Hello JQuery';
+      }
+    </script>
+</head>
+<body>
+<h1>첫번째</h1>
+<h2 id="second">두번째</h2>
+<h2 id="third">세번째</h2>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval</title>
+    <script>
+      window.onload = () => {
+        // 변수를 선언합니다.
+        var clock = document.getElementById("clock");
+        setInterval(() => {
+          clock.innerHTML = new Date().toString();
+        }, 1000);
+      }
+    </script>
+</head>
+<body>
+<h1 id="clock"></h1>
+</body>
+</html>
