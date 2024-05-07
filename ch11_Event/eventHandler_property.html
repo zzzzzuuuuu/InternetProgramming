@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>고전 이벤트 모델</title>
+    <script>
+      window.onload = () => {
+        var header = document.getElementById("header");
+        header.onclick = () => {
+          alert("클릭!");
+        }
+      }
+    </script>
+</head>
+<body>
+<h1 id="header">Click!</h1>
+</body>
+</html>
