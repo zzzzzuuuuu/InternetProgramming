@@ -8,8 +8,10 @@
         var header = document.getElementById("header");
         header.onclick = () => {
           alert("클릭!");
-        }
-      }
+          this.style.color = "red";
+          console.log(this);
+        };
+      };
     </script>
 </head>
 <body>

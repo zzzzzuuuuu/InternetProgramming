@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 핸들러</title>
+    <script>
+      window.onload = () => {
+        var ba = document.getElementById('button-a');
+        var bb = document.getElementById('button-b');
+        var ca = document.getElementById('counter1');
+        var cb = document.getElementById('counter2');
+
+        var alphabetA = document.getElementById('counterA');
+        var alphabetB = document.getElementById('counterB');
+
+        // 이벤트를 연결합니다.
+        ba.onclick = () => {
+          ca.innerHTML = Number(ca.innerHTML) + 1;
+          alphabetA.innerHTML = String.fromCharCode(alphabetA.innerHTML.charCodeAt(0) + 1);
+        };
+        bb.onclick = () => {
+          cb.innerHTML = Number(cb.innerHTML) + 1
+          alphabetB.innerHTML = String.fromCharCode(alphabetB.innerHTML.codePointAt(-) + 1);
+
+        };
+      }
+    </script>
+</head>
+<body>
+<button id="button-a">Button A</button>
+<button id="button-b">Button B</button>
+<h1>Button <span id="counterA">A</span> - <span id="counter1">0</span></h1>
+<h1>Button <span id="counterB">B</span> - <span id="counter2">0</span></h1>
+</body>
+</html>
